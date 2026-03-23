@@ -1,7 +1,7 @@
 import random
 
-ROW = 3
-COLUMN = 3
+ROWS = 3
+COLUMNS = 3
 
 MIN_DEPOSIT = 30
 MAX_DEPOSIT = 300
@@ -12,7 +12,7 @@ MIN_LINE = 1
 MAX_BET = 50
 MIN_BET = 10
 
-symbols = {
+SYMBOLS = {
     "🍀": 4, 
     "🌰": 5,
     "🥝": 7,
@@ -20,7 +20,7 @@ symbols = {
     "🌚": 6
 }
 
-symbols_value = {
+SYMBOLS_VALUE = {
     "🍀": 7, 
     "🌰": 5,
     "🥝": 4,
@@ -49,10 +49,10 @@ def get_slot_machin_spin(rows, cols, symbols):
 
     return columns
 
-def print_slot_machine_spin(columns, rows):
-    for row in rows:
-        for column in columns:
-            print(column[row])
+def print_slot_machine_spin(slots, rows):
+    for row in range(rows):
+        for column in slots:
+            print(column[row], end="")
 
         print()
 
@@ -92,7 +92,7 @@ def lines():
         lines = input("How many lines do you want to bet on? ")
         if lines.isdigit():
             lines = int(lines)
-            if MAX_LINE <= lines <= MIN_LINE:
+            if MIN_LINE <= lines <= MAX_LINE:
                 return(lines)
             else:
                 print("Please input a digit in the range (1 - 3).")
@@ -101,22 +101,38 @@ def lines():
             print("please input a digit.")
 
 def bet():
-    bet = input("How much do you want to bet on esch line? ")
-    if bet.isdigit():
-        bet = int(bet)
-        if MIN_BET <= bet <= MAX_BET:
-            return(bet)
+    while True:
+        bet = input("How much do you want to bet on each line? ")
+        if bet.isdigit():
+            bet = int(bet)
+            if MIN_BET <= bet <= MAX_BET:
+                return(bet)
+            else:
+                print("Please enter a digit in the range (10 - 50).")
+
         else:
-            print("Please enter a digit in the range (10 - 50).")
+            print("Please enter a digit.")
 
-    else:
-        print("Please enter a digit.")
 
-def spin():
-    ...
+
+
+
 
 def main():
-    ...
+    print("___SLOT MACHINE___")
+
+    balance = deposit()
+    n_lines = lines()
+    n_bet = bet()
+
+    slots = get_slot_machin_spin(ROWS, COLUMNS, SYMBOLS)
+    print(f"Your current balance is {balance}")
+    print_slot_machine_spin(slots, ROWS)
+
+    winning, lines_won_on = check_winning(slots, n_lines, SYMBOLS_VALUE, n_bet)
+    
+     
+
 
 main()
 
@@ -139,16 +155,20 @@ main()
 
 
 """
+
+    ___SLOT MACHINE___
+
+
     How much would you like to deposit (50-300)
     how many lines do you want to bet on.
     how much do tyou want to bet on each line 
     
-    
+    you current balance is ...............
     outtttttttttttt
 
+    you won 0                  or you won.............
 
-    your current balnace is 
-
+    your current balance is ...... 
     bet again (y/ n)
 
 
