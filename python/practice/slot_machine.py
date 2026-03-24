@@ -17,7 +17,7 @@ SYMBOLS = {
     "🌰": 5,
     "🥝": 7,
     "🍇": 5,
-    "🌚": 6
+    "🌚": 600
 }
 
 SYMBOLS_VALUE = {
@@ -57,7 +57,7 @@ def print_slot_machine_spin(slots, rows):
         print()
 
 def check_winning(slots, lines, value, bet):
-    winning = 0
+    winning = []
     lines_won_on = []
 
     for line in range(lines):
@@ -70,7 +70,7 @@ def check_winning(slots, lines, value, bet):
                 break
 
         else:
-            winning = value[symbol] * bet
+            winning.append(value[symbol] * bet)
             lines_won_on.append(line + 1)
 
     return winning, lines_won_on
@@ -113,86 +113,44 @@ def bet():
         else:
             print("Please enter a digit.")
 
-
-
-
-
-
-def main():
-    print("___SLOT MACHINE___")
-
-    balance = deposit()
+def spin(balance):
     n_lines = lines()
-    n_bet = bet()
 
+    while True:
+        n_bet = bet()
+        total_bet = n_bet * n_lines
+        if total_bet > balance:
+            print(f"You do not have enough amount, your current balance is ${balance}.")
+        else:
+            break
+
+    print(f"You are betting ${n_bet} on {n_lines} line, your total is ${total_bet}.") 
     slots = get_slot_machin_spin(ROWS, COLUMNS, SYMBOLS)
-    print(f"Your current balance is {balance}")
     print_slot_machine_spin(slots, ROWS)
 
     winning, lines_won_on = check_winning(slots, n_lines, SYMBOLS_VALUE, n_bet)
-    
+    winning = sum(winning)
+    print(f"You won ${winning}.")
+
+    if winning > 0:
+        print("You won on line:", *lines_won_on)
      
+    return winning - total_bet
+
+def main():
+
+    print("___SLOT MACHINE___")
+    balance = deposit()
+
+    while True:
+        print(f"Current balance is ${balance}")
+        _ = input("PRESS ANY BUTTON TO START (Q TO QUIT) ")
+        if _ == "q".lower():
+            break
+        balance += spin(balance)
+
+    print(f"You left with ${balance}")
+    print("____THANKS FOR PLAYING____")
 
 
 main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
-
-    ___SLOT MACHINE___
-
-
-    How much would you like to deposit (50-300)
-    how many lines do you want to bet on.
-    how much do tyou want to bet on each line 
-    
-    you current balance is ...............
-    outtttttttttttt
-
-    you won 0                  or you won.............
-
-    your current balance is ...... 
-    bet again (y/ n)
-
-
-
-    
-"""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
