@@ -13,11 +13,8 @@ It is a record of my progress, challenges, small wins, and the things I learn al
 
 I believe learning becomes more meaningful when it is shared, reflected on, and turned into projects.
 
----
 
----
-
-## 📂 What You’ll Find Here
+### 📂 What You’ll Find Here
 
 - 📝 Notes from lessons and courses
 - 💻 Practice code and exercises
@@ -25,25 +22,20 @@ I believe learning becomes more meaningful when it is shared, reflected on, and 
 - ✨ Personal reflections on what I am learning
 - 📈 Progress updates as I move forward
 
----
 
-## 🎯 My Goal
+### 🎯 My Goal
 
 My goal is to become a strong AI & Machine Learning Engineer by building a solid foundation in programming, computer science, and practical problem solving.
 
 I am taking it one step at a time, learning deeply, and improving consistently.
 
----
 
----
-
-## 🛠️ Projects
+### 🛠️ Projects
 
 Projects will be added here as I improve and gain more confidence.
 
----
 
-## ✍️ Final Note
+### ✍️ Final Note
 
 This repository reflects my journey, not perfection.  
 Every file here is part of the process.
