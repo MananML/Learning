@@ -1,11 +1,12 @@
-# 📘 Learning Journey
+## 📘 Learning Journey
 
 Welcome to my learning repository.
 
 This repo is where I document my journey as I learn Python and Machine Learning step by step.  
 I created it to stay consistent, track my progress, and build in public as I grow into an AI & ML engineer.
 
-## 📖 About This Repository
+
+### 📖 About This Repository
 
 This repository is not just for storing notes.  
 It is a record of my progress, challenges, small wins, and the things I learn along the way.
