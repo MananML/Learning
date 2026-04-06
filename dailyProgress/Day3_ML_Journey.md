@@ -1,10 +1,10 @@
-Day 3 of my Machine Learning Journey 🚀
+***Day 3 of my Machine Learning Journey*** 🚀 
 
 Python is my primary language for this journey, so I’m starting by building a strong foundation.
 
 Thanks to CS50 for providing a well-structured course that covers both Computer Science fundamentals and Python — exactly what I need at this stage.
 
-Today I learned:
+***Today I learned:***
 
 - Functions and how to define them using the "def" keyword
 - Variables and best practices for naming them
